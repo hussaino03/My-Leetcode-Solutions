@@ -13,11 +13,11 @@ class Solution:
             return True
         elif left == None or right == None:
             return False
+        elif left.val != right.val:
+                return False 
+            
         else:
-            if left.val != right.val:
-                return False
-            else:
-                r = self.check(left.left, right.right)
-                if r:
-                    return self.check(left.right, right.left)
+            r = self.check(left.left, right.right)
+            if r:
+                return self.check(left.right, right.left)
         
