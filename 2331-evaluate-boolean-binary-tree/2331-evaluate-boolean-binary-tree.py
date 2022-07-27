@@ -7,7 +7,9 @@
 class Solution:
     def evaluateTree(self, root: Optional[TreeNode]) -> bool:
         if root.left is None and root.right is None:
-            return root.val
+            if root.val == 0:
+                return False
+            return True
         elif root.val == 2:
             return self.evaluateTree(root.left) or self.evaluateTree(root.right)
         
