@@ -10,17 +10,13 @@ class Solution:
         
         if p is None and q is None:
             return True
-        
         elif p is None or q is None:
             return False
         
-        elif p.val != q.val:
-            return False
-        
-        elif (p.right is None and q.right is None) and (p.left is None and q.left is None):
-            return p.val == q.val
-        
         else:
-            return self.isSameTree(p.right, q.right) and self.isSameTree(p.left, q.left)
+            if p.val != q.val:
+                return False
+         
+            return self.isSameTree(p.left, q.left) and self.isSameTree(p.right, q.right)
         
         
