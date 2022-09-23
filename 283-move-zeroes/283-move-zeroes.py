@@ -12,4 +12,3 @@ class Solution:
             a += 1
                 
         return nums
-                
