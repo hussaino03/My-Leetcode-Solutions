@@ -16,4 +16,3 @@ class Solution:
         right_left = self.sumOfLeftLeaves(root.right)
 
         return left + right_left
-    
