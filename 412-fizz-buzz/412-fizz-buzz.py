@@ -10,15 +10,12 @@ class Solution:
             lst[i] = int(lst[i])
             if lst[i] % 3 == 0 and lst[i] % 5 == 0:
                 lst[i] = "FizzBuzz"
-                lst[i] = str(lst[i])
                 
             elif lst[i] % 3 == 0:
                 lst[i] = "Fizz"
-                lst[i] = str(lst[i])
                 
             elif lst[i] % 5 == 0:
                 lst[i] = "Buzz"
-                lst[i] = str(lst[i])
                 
         return [str(x) for x in lst]
                 
