@@ -3,11 +3,10 @@ class Solution:
         lst = []
         i = 1
         while i <= n:
-            lst.append(str(i))
+            lst.append(i)
             i += 1
             
         for i in range(len(lst)):
-            lst[i] = int(lst[i])
             if lst[i] % 3 == 0 and lst[i] % 5 == 0:
                 lst[i] = "FizzBuzz"
                 
