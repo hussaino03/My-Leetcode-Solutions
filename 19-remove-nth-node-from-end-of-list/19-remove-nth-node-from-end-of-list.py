@@ -5,7 +5,7 @@
 #         self.next = next
 class Solution:
     def removeNthFromEnd(self, head: Optional[ListNode], n: int) -> Optional[ListNode]:
-        lst = []
+        lst, temp, res = [], [], []
         if head is None:
             return 
         else:
@@ -14,19 +14,22 @@ class Solution:
                 lst.append(curr.val)
                 curr = curr.next
                 
-            lst.reverse()
+            for v in lst:
+              temp = [v] + temp
             
             i = 0
-            while i <= len(lst):
+            while i <= len(temp):
                 if i == n-1:
-                    lst.pop(i)
+                    temp.pop(i)
                     
                 i += 1
                     
-            lst.reverse()
+            for x in temp:
+              res = [x] + res
+            
             newHead = ListNode()
             pointer = newHead
-            for i in lst:
+            for i in res:
                 pointer.next = ListNode(i)
                 pointer = pointer.next
             return newHead.next
