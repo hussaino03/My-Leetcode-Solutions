@@ -8,13 +8,12 @@ class Solution:
         l, s = [], []
         if not l1 or not l2:
             return
-        else:
-            while l1 is not None:
-                l.append(l1.val)
-                l1 = l1.next
-            while l2 is not None:
-                s.append(l2.val)
-                l2 = l2.next
+        while l1 is not None:
+            l.append(l1.val)
+            l1 = l1.next
+        while l2 is not None:
+            s.append(l2.val)
+            l2 = l2.next
                 
         for i in range(len(l) // 2):
             l[i], l[-1 - i] = l[-1 - i], l[i]
