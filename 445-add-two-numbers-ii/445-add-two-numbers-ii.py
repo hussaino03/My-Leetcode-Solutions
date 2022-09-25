@@ -20,7 +20,7 @@ class Solution:
         
         tmp = [a + b]
         
-        res = list(map(int, list(str(tmp[0]))))
+        res = (map(int, list(str(tmp[0]))))
         
         newH = ListNode()
         pointer = newH
