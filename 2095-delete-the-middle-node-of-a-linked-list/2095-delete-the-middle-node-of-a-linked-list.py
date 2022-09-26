@@ -6,14 +6,16 @@
 class Solution:
     def deleteMiddle(self, head: Optional[ListNode]) -> Optional[ListNode]:
         lst = []
+        counter = 0
         if not head:
             return
         curr = head
         while curr is not None:
             lst.append(curr.val)
+            counter += 1
             curr = curr.next
             
-        mid = len(lst) // 2
+        mid = counter // 2
         lst.pop(mid)
         
         newH = ListNode()
