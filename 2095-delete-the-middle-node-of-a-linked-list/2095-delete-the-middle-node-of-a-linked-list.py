@@ -5,23 +5,17 @@
 #         self.next = next
 class Solution:
     def deleteMiddle(self, head: Optional[ListNode]) -> Optional[ListNode]:
-        lst = []
-        counter = 0
-        if not head:
+        if head.next is None:
             return
-        curr = head
-        while curr is not None:
-            lst.append(curr.val)
-            counter += 1
-            curr = curr.next
-            
-        mid = counter // 2
-        lst.pop(mid)
         
-        newH = ListNode()
-        pointer = newH
-        for i in lst:
-            pointer.next = ListNode(i)
-            pointer = pointer.next
-            
-        return newH.next
+        slow = head
+        fast = head
+        prev = slow
+        
+        while fast and fast.next:
+            prev = slow
+            slow = slow.next
+            fast = fast.next.next
+        
+        prev.next = slow.next
+        return head
