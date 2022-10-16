@@ -23,4 +23,3 @@ class Solution:
                 pointer.next = ListNode(i)
                 pointer = pointer.next
             return newHead.next
-                
